@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average Quiz</title>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <h1><i>Voting Eligibility Checker</i></h1>
+    <div class="container">
+    <label for="name">Name: </label>
+    <input type="text" id="name"><br><br>
+
+    <label for="age">Age: </label>
+    <input type="text" id="age"><br><br>
+
+    <button onclick="checkEligibility()">Check Eligibility</button>
+    <p id="result"></p>
+    </div>
+
+    <div class="section">
+        <button onclick="Home()"><a href="index.html">BACK TO CHOICES</a></button>
+    </div>
+
+    <script>
+        function checkEligibility() {
+            var name = document.getElementById("name").value;
+            var age = parseInt(document.getElementById("age").value);
+
+            if (name.trim() === "" || isNaN(age)) {
+                alert("Please enter a valid name and age.");
+                return;
+            }
+
+            if (age >= 18) {
+                document.getElementById("result").innerHTML = name + ", you are allowed to vote!";
+            } else {
+                document.getElementById("result").innerHTML = name + ", you are not allowed to vote.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addition Example</title>
+   <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<h2><i>A JavaScript that computes the sum of two (2) numbers</i></h2>
+<div class="container">
+    <label for="num1"><b>Number 1:</b></label>
+    <input type="number" id="num1"  onfocus="this.value=''" value="0"><br/><br/>
+    
+    <label for="num2"><b>Number 2:</b></label>
+    <input type="number" id="num2" onfocus="this.value=''" value="0"><br/><br/><br/>
+
+    <button onclick="addNumbers()">Add</button><br/><br/>
+    <button onclick="ClearFields()">Clear</button><br/><br/>
+    <h3>Result: <span id="result">0</span></h3>
+</div>
+
+
+</br><div class="section">
+<button onclick="Home()"><a href="index.html">BACK TO CHOICES</a></button>
+</div>
+
+<p>Submitted by: <br><br> <b>CYRIL A. MONENCILLO JR.</b></p>
+
+
+<script>
+    function addNumbers() {
+        var num1 = parseFloat(document.getElementById('num1').value);
+        var num2 = parseFloat(document.getElementById('num2').value);
+
+  if (isNaN(num1) || isNaN(num2)) {
+        alert("Please enter valid numbers in both fields.");
+        return;
+    }
+
+        var result = num1 + num2;
+        document.getElementById('result').innerHTML =  result ;
+        document.getElementById('result').style.color = "white";
+    }
+
+function ClearFields() {
+
+     document.getElementById("num1").value = "";
+     document.getElementById("num2").value = "";
+     document.getElementById("result").innerHTML = "0";
+}
+
+</script>
+</body>
+</html>
